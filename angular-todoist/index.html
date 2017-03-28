@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="todo">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular - Todoist by FSX</title>
+    <link rel="stylesheet" href="css/styles/app.css">
+
+</head>
+<body>
+
+
+<div class="ant-layout-content">
+<h1>Angular - Todoist</h1>
+<div id="content" ng-controller="todoListCtrl" class="todo-wrapper boxCenter">
+        <form ng-submit="addTodo()" class="form-horizontal">
+
+                <div class="todo-wrapper boxCenter">
+                    <input type="text" autofocus ng-model='todoText' placeholder="待办事项，回车键确认" class="todoInput">
+                    </div>
+
+        </form>
+        <div class="todo-empty" ng-if="todos.length == 0">目前没有待办事项</div>
+        <ul class="todo-main">
+            <li ng-repeat="todo in todos">
+            <label for="">
+
+                <input type="checkbox" class="" ng-model='todo.done'>
+                <span class="task-time" ng-bind="todo.time"></span>                  
+                <input setFocus class="input_check" ng-show="!todo.showing" ng-model="todo.text"  ng-blur="changeFlag($index)">
+
+                <span class="task task-{{todo.done}}" ng-click="changeFlag($index)" ng-mouseover="tooltipWarning($index)" ng-show="todo.showing" ng-bind="todo.text"></span>
+
+            </label>
+            <!-- <a class="operate-btn editBtn" ng-click="changeFlag($index)">编辑</a> -->
+            <a class="operate-btn delBtn" ng-click="delFlag($index)">删除</a>
+            </li>
+        </ul>
+
+        <div class="todo-footer" ng-if="todos.length > 0">
+        <span class="allChecked" ng-click="allCheck()">全选</span>
+        <span class="operate-btn allTodo">所有:{{todos.length}}</span>
+        <span class="operate-btn doneTodo">已完成:{{doneTodo()}}</span>
+        <span class="operate-btn undoneTodo">未完成:{{remaining()}}</span>
+        <span class="operate-btn clearTodo" ng-click="archive()">清空已完成</span>
+      </div>
+
+
+</div>
+</div>
+</body>
+<script src="js/angular.min.js"></script>
+<script src="component/app.js"></script>
+</html>

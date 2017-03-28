@@ -1,0 +1,157 @@
+*{
+  margin:0;
+  padding: 0;
+}
+body {
+    background-color: rgba(32,45,92,.87);
+}
+h1 {
+    font-size: 50px;
+    padding: 20px 0;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #fff;
+}
+ li {
+    font-size: 24px;
+    line-height: 50px;
+    position: relative;
+    overflow: hidden;
+    height: 50px;
+    padding: 0 0 0 40px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    box-shadow: inset 0 -1px 1px 0 rgba(0, 0, 0, .1);
+}
+input{
+    font-family: inherit;
+    font-size: 24px;
+    font-weight: inherit;
+    line-height: 48px;
+    position: relative;
+    box-sizing: border-box;
+    margin: 0;
+    color: inherit;
+    border: none;
+    outline: none;
+    background: rgba(0, 0, 0, .003);
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    transition: all 0.5 ease;
+}
+.input_check{
+    width: 300px;
+    box-shadow: inset 0 -2px 0px 0 #20a0ff;
+}
+.todo-wrapper {
+    position: relative;
+    margin: 20px auto 0;
+    background: #fff;
+    box-shadow: 0 0 20px 0 rgba(255,255, 255, .6);
+}
+.boxCenter {
+    position: relative;
+    width: 800px;
+    margin: 0 auto;
+}
+  .todoInput {
+  
+    font-size: 20px;
+    line-height: 1.4em;
+    width: 100%;
+    margin: 0;
+    padding: 16px 16px 16px 20px;
+    background: rgba(0, 0, 0, .003);
+    box-shadow: inset 0 -1px 1px 0 rgba(0, 0, 0, .1);
+}
+.todo-empty {
+    padding: 20px;
+    text-indent: 20px;
+    color: #999;
+    box-shadow: inset 0 -1px 1px 0 rgba(0, 0, 0, .1);
+}
+.todo-empty:before {
+    background: #20a0ff;
+}
+.undone-title:before, .todo-empty:before {
+    position: absolute;
+    width: 20px;
+    height: 6px;
+    margin: 8px 0 0 -30px;
+    content: '';
+}
+
+.operate-btn, .allChecked {
+    font-size: 12px;
+    line-height: 25px;
+    position: absolute;
+    top: 13px;
+    width: 75px;
+    height: 25px;
+    cursor: pointer;
+    text-align: center;
+    letter-spacing: .5px;
+    color: #fff;
+    border-radius: 3px;
+}
+.delBtn,.clearTodo{
+    right: 10px;
+    background-color: #ff4949;
+}
+.delBtn{
+    display: none;
+}
+
+.todo-main li:hover .delBtn{
+    display: block;
+}
+.todo-main .task-true:before {
+    position: absolute;
+    top: 13px;
+    left: 7px;
+    width: 17px;
+    height: 9px;
+    margin-top: 4px;
+    margin-left: 3px;
+    content: '';
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    color: #13ce66;
+    border-bottom: solid 2px #13ce66;
+    border-left: solid 2px #13ce66;
+}
+.todo-footer{
+    position: relative;
+    line-height: 50px;
+    position: relative;
+    height: 50px;
+    padding: 0 20px;
+}
+.task{
+        cursor: pointer;
+}
+.task-time {
+    font-size: 13px;
+    font-style: inherit;
+    color: #bbb;
+    display: inline-block;
+    width: 115px;
+}
+.allChecked {
+    left: 10px;
+    background-color: #20a0ff;
+}
+.undoneTodo {
+    right: 100px;
+    background-color: #f7ba2a;
+}
+.doneTodo{
+    right: 190px;
+    background-color: #13ce66;
+}
+.allTodo {
+    right: 280px;
+    background-color: #20a0ff;
+}
+
