@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular JS</title>
+    <script src="http://cdn.bootcss.com/angular.js/1.5.0/angular.min.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+    <input type="checkbox" ng-model="myVar" ng-init="myVar = true">
+    <div ng-if="myVar">
+        <h1>Welcome</h1>
+        <p>Welcome to my home.</p>
+        <hr>
+    </div>
+    <script type="text/javascript">
+        var app = angular.module('myApp',[]);
+        app.controller('myCtrl',function($scope) {
+        })
+    </script>
+</body>
+</html>

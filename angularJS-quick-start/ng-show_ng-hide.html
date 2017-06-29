@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular JS</title>
+    <script src="http://cdn.bootcss.com/angular.js/1.5.0/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+    <div>
+        隐藏 HTML: <input type="checkbox" ng-model="myVar1">
+        <div ng-hide="myVar1">
+        <h1>Welcome 隐藏</h1>
+        <p>Welcome to my home.</p>
+        </div>
+    </div>
+    <div>
+        显示 HTML: <input type="checkbox" ng-model="myVar2">
+        <div ng-show="myVar2">
+        <h1>Welcome 显示</h1>
+        <p>Welcome to my home.</p>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var app = angular.module('myApp',[]);
+    </script>
+</body>
+</html>

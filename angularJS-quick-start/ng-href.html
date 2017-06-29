@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular JS</title>
+    <script src="http://cdn.bootcss.com/angular.js/1.5.0/angular.min.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+    <div ng-init="myVar = 'http://www.itravac.com'">
+        <h1>想去旅游？</h1>
+        <p>访问 <a ng-href="{{myVar}}">{{myVar}}</a> 出发!</p>
+    </div>
+    <script type="text/javascript">
+        var app = angular.module('myApp',[]);
+        app.controller('myCtrl',function($scope) {
+        })
+    </script>
+</body>
+</html>

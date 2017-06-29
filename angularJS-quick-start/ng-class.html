@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular JS</title>
+    <script src="http://cdn.bootcss.com/angular.js/1.5.0/angular.min.js"></script>
+    <style>
+        .sky {
+            color:white;
+            background-color:lightblue;
+            padding:20px;
+            font-family:"Courier New";
+        }
+        .tomato {
+            background-color:coral;
+            padding:20px;
+            font-family:Verdana;
+        }
+    </style>
+</head>
+<body ng-app="myApp">
+    <select ng-model="home">
+        <option value="sky">Sky</option>
+        <option value="tomato">Tomato</option>
+    </select>
+    <div ng-class="home">
+        <h1>Welcome Home!</h1>
+        <p>I like it!</p>
+    </div>
+    <script type="text/javascript">
+        var app = angular.module('myApp',[]);
+    </script>
+</body>
+</html>

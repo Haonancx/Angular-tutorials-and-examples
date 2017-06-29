@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Angular JS</title>
+    <script src="http://cdn.bootcss.com/angular.js/1.5.0/angular.min.js"></script>
+</head>
+
+<body>
+    <div>
+        <div ng-controller="myCtrl">
+            <h1>{{greeting}}</h1>
+            <h2 ng-bind="greeting"></h1>
+            <input ng-model="greeting" type="text"/>
+        </div>
+    </div>
+    <script type="text/javascript">
+
+    var app = angular.module('myApp', []);
+
+    app.controller('myCtrl', function($scope, $rootScope) {
+        
+        $scope.greeting = 'Hello World';
+        
+    });
+    </script>
+</body>
+
+</html>

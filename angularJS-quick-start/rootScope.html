@@ -1,0 +1,32 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular JS</title>
+    <script src="http://cdn.bootcss.com/angular.js/1.5.0/angular.min.js"></script> 
+</head>
+<body ng-app="myApp">
+    <div  ng-controller="myCtrl">
+        名: <input type="text" ng-model="firstName"><br>
+        姓: <input type="text" ng-model="lastName"><br>
+        <br>
+        姓名: {{ firstName + " " + lastName }}
+        性别: {{ Sex }}
+    </div>
+    <div  ng-controller="secondCtrl">
+    你的性别是: {{ Sex }}
+    </div>
+    <script type="text/javascript">
+        var app = angular.module('myApp',[]);
+        app.controller('myCtrl',function($scope, $rootScope) {
+            // $scope代表作用域
+            $scope.firstName = "John";
+            $scope.lastName = "Doe";
+            $rootScope.Sex = "女";
+        });
+        app.controller('secondCtrl',function($scope, $rootScope) {
+        });
+    </script>
+</body>
+</html>

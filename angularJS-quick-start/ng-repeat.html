@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular JS</title>
+    <script src="http://cdn.bootcss.com/angular.js/1.5.0/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="myCtrl">
+        <ul>
+            <li ng-repeat="x in items">
+                {{ '第' + $index + '条数据: 有' + x.num + '个来自' + x.country + '的' + x.name }}
+            </li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+        var app = angular.module('myApp',[]);
+        app.controller("myCtrl",function($scope) {
+            $scope.items = [
+                { name: 'box', num: 1, country: 'Norway'},
+                { name: 'football', num: 2, country: 'Sweden'},
+                { name: 'toy', num: 3, country: 'Denmark'},
+                { name: 'guitar', num: 4, country: 'Germany'}
+            ]
+        })
+    </script>
+</body>
+</html>

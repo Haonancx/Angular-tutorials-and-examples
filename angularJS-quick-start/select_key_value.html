@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular JS</title>
+    <script src="http://cdn.bootcss.com/angular.js/1.5.0/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="myCtrl">
+        <select ng-model="selectedNames" ng-options="x.name for x in names"></select>
+        <h1>你选择的是: {{ selectedNames.id }}  {{ selectedNames.name }}</h1>
+    </div>
+    <script type="text/javascript">
+        var app = angular.module('myApp',[]);
+        app.controller("myCtrl",function($scope) {
+            $scope.names = [ 
+                { id: '0001', name: 'Norway' },
+                { id: '0002', name: 'Sweden' },
+                { id: '0003', name: 'Denmark' },
+                { id: '0004', name: 'Germany' }
+            ];
+        })
+    </script>
+</body>
+</html>

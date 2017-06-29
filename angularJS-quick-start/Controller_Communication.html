@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>  
+<html lang="zh" ng-app="app">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>AngularJS学习</title>  
+    <script src="http://cdn.bootcss.com/angular.js/1.5.0/angular.min.js"></script> 
+</head>  
+<body>  
+<div ng-app="app" ng-controller="parentCtr">
+    <div ng-controller="childCtr1">name :
+        <input ng-model="name" type="text" ng-change="change(name);" />
+    </div>
+    <div ng-controller="childCtr2">Ctr1 name:
+        <input ng-model="ctr1Name" />
+    </div>
+</div>
+</body>  
+<script type="text/javascript">  
+angular.module("app", []).controller("parentCtr",
+function ($scope) {
+    $scope.$on("Ctr1NameChange",
+ 
+    function (event, msg) {
+        console.log("parent", msg);
+        $scope.$broadcast("Ctr1NameChangeFromParrent", msg);
+    });
+}).controller("childCtr1", function ($scope) {
+    $scope.change = function (name) {
+        console.log("childCtr1", name);
+        $scope.$emit("Ctr1NameChange", name);
+    };
+}).controller("childCtr2", function ($scope) {
+    $scope.$on("Ctr1NameChangeFromParrent",
+ 
+    function (event, msg) {
+        console.log("childCtr2", msg);
+        $scope.ctr1Name = msg;
+    });
+});
+</script>  
+</html>  
